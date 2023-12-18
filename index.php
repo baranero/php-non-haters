@@ -1,19 +1,16 @@
 <?php
-  echo"I love pizza<br>";
-  echo"It's really good";
+  $name = "Bro OK";
+
+  $price = 4.99;
+  $tax_rate = 5.2;
+  $quantity = 3;
   
+
+  $employed = true;
+  $online = true;
+
+  echo "Hello {$name}<br>";
+  echo "Price is \${$price}<br>";
+  echo "Tax rate is: {$tax_rate}%<br>";
+  echo "Online status: {$online}<br>";
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <br>
-  <button>
-    Order Pizza
-  </button>
-</body>
-</html>
