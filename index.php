@@ -1,16 +1,22 @@
 <?php
-  $name = "Bro OK";
 
-  $price = 4.99;
-  $tax_rate = 5.2;
-  $quantity = 3;
-  
+function getColorCode($color)
+{
 
-  $employed = true;
-  $online = true;
+  $resistorColors = [
+    'black' => 0,
+    'brown' => 1,
+    'red' => 2,
+    'orange' => 3,
+    'yellow' => 4,
+    'green' => 5,
+    'blue' => 6,
+    'violet' => 7,
+    'gray' => 8,
+    'white' => 9,
+  ];
 
-  echo "Hello {$name}<br>";
-  echo "Price is \${$price}<br>";
-  echo "Tax rate is: {$tax_rate}%<br>";
-  echo "Online status: {$online}<br>";
-?>
+  return $resistorColors[$color];
+};
+
+echo getColorCode('black');
