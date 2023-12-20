@@ -2,17 +2,20 @@
 
 declare(strict_types=1);
 
-function isArmstrongNumber(int $number) : bool
+function slices(string $series, int $size) : array
 {
-    $numberToString = strval($number);
-    $digitsArray = str_split($numberToString);
-    $numberOfDigits = count($digitsArray);
-    $poweredDigits = array_map(function ($digit) use ($numberOfDigits) {
-      return pow((int) $digit, $numberOfDigits);
-    }, $digitsArray);
-    $sumOfPoweredDigits = array_sum($poweredDigits);
+    $result = [];
 
-    return $sumOfPoweredDigits === $number;
-}
+    if ($size > strlen($series) || $size < 1) {
+      return $result;
+    }
 
-echo isArmstrongNumber(154); 
+    for ($i = 0; $i <= strlen($series) - $size; $i++) {
+      $substring = substr($series, $i, $size);
+      $result[] = $substring;
+  }
+
+  return $result;
+};
+
+print_r(slices('12345', 3));
