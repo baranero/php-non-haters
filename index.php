@@ -7,6 +7,8 @@ $users = array_merge(
   ['Sam', 'Jess']
 );
 
+asort($users);
+
 echo '<pre>';
   print_r($users);
 echo '</pre>';
