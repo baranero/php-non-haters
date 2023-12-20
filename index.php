@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-function getNewName(): string {
-  $letters = range('A', 'Z');
-  $randomKeys = array_rand($letters, 2);
-  $randomLetters = array_intersect_key($letters, array_flip($randomKeys));
-  $randomLettersString = implode('', $randomLetters);
+function isArmstrongNumber(int $number) : bool
+{
+    $numberToString = strval($number);
+    $digitsArray = str_split($numberToString);
+    $numberOfDigits = count($digitsArray);
+    $poweredDigits = array_map(function ($digit) use ($numberOfDigits) {
+      return pow((int) $digit, $numberOfDigits);
+    }, $digitsArray);
+    $sumOfPoweredDigits = array_sum($poweredDigits);
 
-    $randomNumbers = mt_rand(100, 999);
-    $stringNumber = strval($randomNumbers);
-
-    return $randomLettersString . $stringNumber;
+    return $sumOfPoweredDigits === $number;
 }
 
-$randomString = getNewName();
-echo $randomString;
+echo isArmstrongNumber(154); 
