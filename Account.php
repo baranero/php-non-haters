@@ -1,13 +1,19 @@
 <?php
 
 class Account {
-  public string $name;
-  public float $balance = 5;
-
-  public function __construct(string $newName, float $newBalance) {
-    $this -> name = $newName;
-    $this -> balance = $newBalance;
+  public function __construct(
+    public string $name,
+    public float $balance
+  )
+  {
+    
   }
+
+public function deposit(float $amount) {
+  $this -> balance += $amount;
+
+  return $this;
+}
 
 
 }
