@@ -4,7 +4,9 @@ declare(strict_types = 1);
 
 require_once 'Account.php';
 
-$myAccount = null;
+use App\Account;
+
+$myAccount = new Account('John', 20);
 
 
 
