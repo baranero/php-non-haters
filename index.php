@@ -2,9 +2,9 @@
 
 $users = ['Jogn', 'Bob', "Tom", null];
 
-$users = array_map(
-  fn($user) => strtoupper($user),
-  $users
+$users = array_merge(
+  $users,
+  ['Sam', 'Jess']
 );
 
 echo '<pre>';
