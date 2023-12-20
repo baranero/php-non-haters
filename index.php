@@ -1,14 +1,11 @@
 <?php
 
-$users = ['Jogn', 'Bob', "Tom", null];
+if (file_exists(('example.txt'))) {
+  echo filesize('example.txt');
 
-$users = array_merge(
-  $users,
-  ['Sam', 'Jess']
-);
+  file_put_contents('example.txt', "Hello world");
 
-asort($users);
+  clearstatcache();
 
-echo '<pre>';
-  print_r($users);
-echo '</pre>';
+  echo file_get_contents('example.txt');
+}
