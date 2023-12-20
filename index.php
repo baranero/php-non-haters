@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types = 1);
+
 require_once 'Account.php';
 
-$myAccount = new Account;
-$johnsAccount = new Account;
+$myAccount = new Account('Tom', 200);
+$johnsAccount = new Account('John', 10);
 
-var_dump($myAccount -> balance);
+$myAccount -> balance = 20;
+
+var_dump($myAccount);
 echo '<br>';
 var_dump($johnsAccount);
