@@ -1,11 +1,18 @@
 <?php
 
-if (file_exists(('example.txt'))) {
-  echo filesize('example.txt');
+declare(strict_types=1);
 
-  file_put_contents('example.txt', "Hello world");
+function getNewName(): string {
+  $letters = range('A', 'Z');
+  $randomKeys = array_rand($letters, 2);
+  $randomLetters = array_intersect_key($letters, array_flip($randomKeys));
+  $randomLettersString = implode('', $randomLetters);
 
-  clearstatcache();
+    $randomNumbers = mt_rand(100, 999);
+    $stringNumber = strval($randomNumbers);
 
-  echo file_get_contents('example.txt');
+    return $randomLettersString . $stringNumber;
 }
+
+$randomString = getNewName();
+echo $randomString;
