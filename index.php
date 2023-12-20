@@ -1,21 +1,10 @@
 <?php
 
-declare(strict_types=1);
+require_once 'Account.php';
 
-function slices(string $series, int $size) : array
-{
-    $result = [];
+$myAccount = new Account;
+$johnsAccount = new Account;
 
-    if ($size > strlen($series) || $size < 1) {
-      return $result;
-    }
-
-    for ($i = 0; $i <= strlen($series) - $size; $i++) {
-      $substring = substr($series, $i, $size);
-      $result[] = $substring;
-  }
-
-  return $result;
-};
-
-print_r(slices('12345', 3));
+var_dump($myAccount);
+echo '<br>';
+var_dump($johnsAccount);
