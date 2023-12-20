@@ -1,13 +1,12 @@
 <?php
 
-$myCup = 'empty';
-$myFriendsCup = 'empty';
+$users = ['Jogn', 'Bob', "Tom", null];
 
-function fillCup(&$cupParam) {
-  $cupParam = 'filled';
-}
+$users = array_map(
+  fn($user) => strtoupper($user),
+  $users
+);
 
-fillCup($myCup);
-fillCup($myFriendsCup);
-
-echo $myCup;
+echo '<pre>';
+  print_r($users);
+echo '</pre>';
