@@ -12,7 +12,7 @@ spl_autoload_register(function($class) {
   require_once $path;
 });
 
-use App\{Account, SocialMedia};
+use App\{Account, SocialMedia, Utility};
 
 $myAccount = new Account('John', 20);
 new DateTime();
@@ -20,4 +20,4 @@ new DateTime();
 
 $myAccount?->deposit(80)->deposit(30);
 
-var_dump($myAccount);
+Utility::printArr([12,32,4]);

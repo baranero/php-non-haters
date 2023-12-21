@@ -9,6 +9,8 @@ use DateTime as DT;
 new DT();
 
 class Account {
+  public const INTEREST_RATE = 2;
+  public static int $count = 0;
 
   public SocialMedia $socialMedia;
 
@@ -18,7 +20,10 @@ class Account {
   )
   {
     $this->socialMedia = new SocialMedia();
+
+    self::$count++;
   }
+
 
 public function deposit(float $amount) {
   $this -> balance += $amount;
